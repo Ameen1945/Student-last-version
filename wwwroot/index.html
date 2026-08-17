@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام إدارة الطلاب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- قسم تسجيل الدخول (يظهر أولاً) -->
+    <div class="login-container" id="loginContainer">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم">
+        <input type="password" id="password" placeholder="كلمة المرور">
+        <button onclick="login()" class="btn-login">دخول</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- لوحة التحكم وإدارة الطلاب (مخفية ولا تظهر إلا بعد تسجيل الدخول) -->
+    <div class="students-container" id="studentsContainer" style="display: none;">
+        <h2>لوحة إدارة الطلاب</h2>
+
+        <!-- حقول إدخال البيانات -->
+        <div class="input-group">
+            <input type="number" id="studentId" placeholder="رقم الطالب (للبحث، التعديل، الحذف)">
+            <input type="text" id="studentName" placeholder="اسم الطالب (للإضافة، التعديل)">
+            <input type="number" id="studentAge" placeholder="عمر الطالب (للإضافة، التعديل)">
+        </div>
+
+        <!-- أزرار عمليات الـ CRUD -->
+        <div class="button-group">
+            <button onclick="getStudents()" class="btn-primary">عرض الكل</button>
+            <button onclick="getStudentById()" class="btn-info">بحث بالرقم</button>
+            <button onclick="addStudent()" class="btn-success">إضافة طالب</button>
+            <button onclick="updateStudent()" class="btn-warning">تعديل طالب</button>
+            <button onclick="deleteStudent()" class="btn-danger">حذف طالب</button>
+        </div>
+
+        <!-- صندوق عرض النتائج -->
+        <div class="result-box">
+            <h3>النتائج:</h3>
+            <ul id="studentsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
