@@ -19,7 +19,7 @@
 .login-container {
     width: 300px;
 }
-
+git --version
 .students-container {
     width: 500px;
     margin: 20px;
@@ -41,7 +41,7 @@ button {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    color: white;
+    color: forestgreen;
 }
 
 .btn-login {
